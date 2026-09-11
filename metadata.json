@@ -1,0 +1,6 @@
+{
+  "name": "Aura Player × LN",
+  "description": "High-velocity kinetic audio streaming player inspired by Formula 1 telemetry and race-day performance acoustics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-kinetic {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .tracking-ultra-tight {
+    letter-spacing: -0.06em;
+  }
+  .tracking-wide-tech {
+    letter-spacing: 0.18em;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #09090b;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #dc143c;
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff4d6d;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Racing grid & carbon textures */
+.bg-racing-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+.carbon-texture {
+  background: radial-gradient(circle at 50% 0%, rgba(220, 20, 60, 0.15) 0%, transparent 60%),
+              repeating-linear-gradient(45deg, #121217 0px, #121217 2px, #0b0b0e 2px, #0b0b0e 4px);
+}
+
+.diagonal-lines {
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 2px, transparent 0, transparent 8px);
+}
+
+/* Kinetic Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Equalizer sound waves */
+@keyframes eq1 { 0%, 100% { height: 4px; } 50% { height: 18px; } }
+@keyframes eq2 { 0%, 100% { height: 16px; } 50% { height: 6px; } }
+@keyframes eq3 { 0%, 100% { height: 8px; } 50% { height: 22px; } }
+@keyframes eq4 { 0%, 100% { height: 20px; } 50% { height: 10px; } }
+
+.eq-bar-1 { animation: eq1 0.75s ease-in-out infinite; }
+.eq-bar-2 { animation: eq2 0.6s ease-in-out infinite 0.15s; }
+.eq-bar-3 { animation: eq3 0.9s ease-in-out infinite 0.3s; }
+.eq-bar-4 { animation: eq4 0.7s ease-in-out infinite 0.1s; }
+
+/* Kinetic Chamfer Shapes */
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+.clip-corner-rev {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+.clip-tag {
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+/* Kinetic Card 3D feel */
+.kinetic-card {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.kinetic-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(220, 20, 60, 0.6);
+  box-shadow: 0 12px 28px -8px rgba(220, 20, 60, 0.3);
+}
+
