@@ -4,8 +4,12 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const isGitHubActions = !!process.env.GITHUB_ACTIONS;
+
   return {
-    base: './',
+    // GitHub Pages deploys the site under the repository name path, so assets
+    // must be referenced from that subpath instead of the domain root.
+    base: isGitHubActions ? '/aura-player/' : './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
